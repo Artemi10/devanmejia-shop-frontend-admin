@@ -24,10 +24,11 @@ import { FilterTypeComponent } from './components/admin/orders/order-list/order-
 import { StockComponent } from './components/admin/stock/stock.component';
 import { NewProductPanelComponent } from './components/admin/stock/new-product-panel/new-product-panel.component';
 import { CropperComponent } from './components/admin/stock/new-product-panel/cropper/cropper.component';
+import {AuthorizationGuard} from './guards/authorization/authorization.guard';
 
 const appRoutes: Routes = [
   {path:'orders', component:OrdersComponent, canActivate:[AuthenticationGuard]},
-  {path:'logIn', component:LogInComponent},
+  {path:'logIn', component:LogInComponent, canActivate:[AuthorizationGuard]},
   {path:'', component: StockComponent, canActivate:[AuthenticationGuard]}
 
 ];
