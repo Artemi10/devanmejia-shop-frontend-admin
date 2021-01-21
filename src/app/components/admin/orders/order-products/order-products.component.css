@@ -1,0 +1,25 @@
+.order-products__tittle{
+  font-size: 35px;
+  color:  #939393;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 14px;
+}
+.order-products__tittle_error-message{
+  font-size: 30px;
+  color: #c01934;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.order-products__order-id{
+  font-size: 25px;
+  margin: 10px auto;
+  text-align: right;
+}
+.order-products__place-order{
+  display: block;
+  margin: 0 auto;
+  font-size: 25px;
+}
+

@@ -1,0 +1,6 @@
+<div class="order-list__tittle">List of orders</div>
+<app-order-list-filter (changeFilterFlagEvent)="changeFilterFlagEventListener($event)" (clickReverseButtonEvent)="reverseOrderList()"></app-order-list-filter>
+<div class="order-list__order" *ngFor="let order of orders">
+  <app-order *ngIf="order.show" [order]="order" (selectOrderEvent)="selectOrderEventListener($event)"></app-order>
+</div>
+

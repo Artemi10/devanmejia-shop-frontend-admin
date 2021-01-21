@@ -1,0 +1,28 @@
+.order-product{
+  display: flex;
+  flex-direction: row;
+}
+.order-product__image,
+.order-product__name,
+.order-product__amount{
+  width: 33%;
+}
+.order-product__image img{
+  display: block;
+  width: 80%;
+  border-radius: 5px;
+  margin: 15px auto;
+}
+.order-product__amount__tittle,
+.order-product__name__tittle{
+  text-align: center;
+  font-size: 30px;
+  margin: 15px auto;
+}
+.order-product__amount__value,
+.order-product__name__value{
+  text-align: center;
+  font-size: 25px;
+  margin: 0 auto 15px;
+}
+

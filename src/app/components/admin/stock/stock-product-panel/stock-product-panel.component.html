@@ -1,0 +1,13 @@
+<div class="stock-panel">
+  <p *ngIf="errorMessage != ''" class="stock-panel__warning">{{errorMessage}}</p>
+  <div class="stock-panel__tittle">Stock panel</div>
+  <div class="stock-panel__table">
+    <div class="stock-panel__table__tittles">
+      <p class="stock-panel__table__tittles__product-name">Product name</p>
+      <p class="stock-panel__table__tittles__product-amount">Amount</p>
+      <p class="stock-panel__table__tittles__product-price">Price</p>
+    </div>
+    <app-stock-product *ngFor="let stockProduct of stockProducts" [stockProduct]="stockProduct" (updateProductEvent)="updateProduct($event)"
+                       (clickDeleteButtonEvent)="deleteProductFromStock($event)"></app-stock-product>
+  </div>
+</div>

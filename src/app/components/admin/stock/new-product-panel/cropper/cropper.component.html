@@ -1,0 +1,4 @@
+<div class="cropper">
+  <img [src]="sourceImage" crossorigin class="cropper__source-image" (load)="showCropperPanel()" [hidden]="showImage" #htmlImageElement>
+  <img [src]="destinationImage" class="cropper__destination-image">
+</div>

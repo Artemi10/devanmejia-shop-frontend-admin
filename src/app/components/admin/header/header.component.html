@@ -1,0 +1,8 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm header">
+  <p class="my-0 mr-md-auto font-weight-bold header__logo">ProductShop AdminPanel</p>
+  <nav class="my-2 my-md-0 mr-md-3 header__nav">
+    <a *ngIf="!isCurrentPage('/')" class="p-2 href header__nav__href" routerLink="/">Stock</a>
+    <a *ngIf="!isCurrentPage('/orders')" class="p-2 href header__nav__href" routerLink="/orders">Orders</a>
+    <a *ngIf="isExisted()" class="p-2 href header__nav__href" (click)="logOut()">Logout</a>
+  </nav>
+</div>

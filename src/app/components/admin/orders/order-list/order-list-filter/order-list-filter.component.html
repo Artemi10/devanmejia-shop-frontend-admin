@@ -1,0 +1,5 @@
+<div class="order-filter">
+  <img class="order-filter__reverse-button" src="./assets/static/reverse-icon.png" (click)="clickReverseButtonListener()"/>
+  <app-filter-type class="order-filter__type" [filterTypeName]="'Ordered'" (changeFilterFlagEvent)="changeOrderedFlagEventListener($event)"></app-filter-type>
+  <app-filter-type class="order-filter__type" [filterTypeName]="'Ready'" (changeFilterFlagEvent)="changeOrderedFlagEventListener($event)"></app-filter-type>
+</div>

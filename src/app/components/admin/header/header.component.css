@@ -1,0 +1,12 @@
+.header__logo{
+  color:#c01934;
+  font-size: 25px;
+}
+.header__nav__href{
+  text-decoration: none;
+  color: #939393;
+  cursor: pointer;
+}
+.header__nav__href:hover{
+  color:#c01934;
+}

@@ -1,0 +1,13 @@
+.cropper{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cropper__source-image{
+  display: block;
+  width: 80%;
+  height: auto;
+  margin: 15px auto;
+}
+.cropper__destination-image{
+  display: none;
+}

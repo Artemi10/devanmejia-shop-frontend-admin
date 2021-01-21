@@ -1,0 +1,7 @@
+.stock{
+  display: flex;
+}
+.stock__products-panel,
+.stock__new-product-panel{
+  width: 50%;
+}

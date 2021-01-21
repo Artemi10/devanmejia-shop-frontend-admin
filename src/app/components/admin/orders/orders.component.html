@@ -1,0 +1,5 @@
+<div class="orders">
+  <div class="orders__list"><app-order-list [orders]="orders" (selectOrderEvent)="selectOrderEventListener($event)"></app-order-list></div>
+  <div *ngIf="selectedOrder != null" class="orders__products"><app-order-products [selectedOrder]="selectedOrder"></app-order-products></div>
+  <div *ngIf="selectedOrder === null" class="orders__products_empty">Select order</div>
+</div>

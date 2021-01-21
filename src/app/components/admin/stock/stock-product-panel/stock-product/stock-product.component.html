@@ -1,0 +1,8 @@
+<div class="table__row">
+  <p class="table__row__product-name" (mouseenter)="openDeleteButton()" (mouseleave)="closeDeleteButton()">
+    <img class="table__row__product-name__img" [style.display]="isDeleteButtonOpened ? 'inline' : 'none'" src="../../../../../../assets/static/delete-button-icon.png" (click)="clickDeleteButtonListener()">
+    {{stockProduct.productName}}
+  </p>
+  <input class="table__row__product-amount" value="{{stockProduct.amount}}" type="number" (change)="productAmountChangeListener($event.target.value)">
+  <input class="table__row__product-price" value="{{stockProduct.price}}" type="number" (change)="productPriceChangeListener($event.target.value)">
+</div>

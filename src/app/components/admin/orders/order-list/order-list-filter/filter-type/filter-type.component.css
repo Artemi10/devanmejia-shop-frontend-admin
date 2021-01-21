@@ -1,0 +1,21 @@
+.filter__type__input{
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: #939393 solid 1px;
+  margin-right: 10px;
+}
+.filter__type__input__img{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+}
+.filter__type__name{
+  font-size: 20px;
+}
