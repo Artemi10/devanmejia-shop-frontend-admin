@@ -11,7 +11,7 @@ export class AuthorizationGuard implements CanActivate {
 
   canActivate():boolean {
     if(!(this.authenticationService.isAccessTokenExisted() && !this.authenticationService.isAccessTokenExpired() && this.authenticationService.getUserRole() === 'ROLE_ADMIN')
-      || !this.authenticationService.isRefreshTokenExisted()) {
+      && !this.authenticationService.isRefreshTokenExisted()) {
       return true;
     }
     else {
