@@ -25,6 +25,7 @@ import { StockComponent } from './components/admin/stock/stock.component';
 import { NewProductPanelComponent } from './components/admin/stock/new-product-panel/new-product-panel.component';
 import { CropperComponent } from './components/admin/stock/new-product-panel/cropper/cropper.component';
 import {AuthorizationGuard} from './guards/authorization/authorization.guard';
+import {RefreshTokenInterceptor} from './services/authentication/refresh-token.interceptor';
 
 const appRoutes: Routes = [
   {path:'orders', component:OrdersComponent, canActivate:[AuthenticationGuard]},
@@ -58,10 +59,17 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthHeaderInterceptor,
-    multi: true},
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHeaderInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RefreshTokenInterceptor,
+      multi: true
+    },
     {provide:ErrorHandler, useClass:AuthErrorHandler},
     {provide: APP_BASE_HREF, useValue:'/'}],
   bootstrap: [AppComponent]

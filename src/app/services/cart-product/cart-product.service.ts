@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {AuthorizationService} from '../authorization/authorization.service';
 import {environment} from '../../../environments/environment';
 
 @Injectable({
@@ -8,10 +7,9 @@ import {environment} from '../../../environments/environment';
 })
 export class CartProductService {
 
-  constructor(private http: HttpClient, private authorizationService: AuthorizationService) {}
+  constructor(private http: HttpClient) {}
 
   public getCartProducts(orderId: number): Promise<Object>{
-    return this.authorizationService
-      .sendRefreshTokensRequestInterceptor(this.http.get(environment.apiUrl + "/api/admin/cartProduct/" + orderId));
+    return this.http.get(environment.apiUrl + "/api/admin/cartProduct/" + orderId).toPromise();
   }
 }
