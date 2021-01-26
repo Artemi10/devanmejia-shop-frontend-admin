@@ -1,7 +1,3 @@
-.stock{
-  display: flex;
-}
-.stock__products-panel,
-.stock__new-product-panel{
-  width: 50%;
+.product-panel_close{
+  display: none;
 }

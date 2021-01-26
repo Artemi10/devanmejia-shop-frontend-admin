@@ -1,4 +1,10 @@
-<div class="stock">
-  <app-stock-product-panel [updateProductsFlag]="updateProductsFlag" class="stock__products-panel"></app-stock-product-panel>
-  <app-new-product-panel (addProductEvent)="addProductEventListener()" class="stock__new-product-panel"></app-new-product-panel>
+<div class="row no-gutters" (window:resize)="onResize($event)">
+  <div class="col-sm-6">
+    <app-panel-tittle [tittle]="'Stock products'" (clickButtonEvent)="clickStockProductsButtonEventListener()"></app-panel-tittle>
+    <app-stock-product-panel [ngClass]="{'product-panel_close' : !showStockProductsPanel}" [updateProductsFlag]="updateProductsFlag"></app-stock-product-panel>
+  </div>
+  <div class="col-sm-6">
+    <app-panel-tittle [tittle]="'Add new product'" (clickButtonEvent)="clickNewProductButtonEventListener()"></app-panel-tittle>
+    <app-new-product-panel [ngClass]="{'product-panel_close' : !showNewProductPanel}" (addProductEvent)="addProductEventListener()" ></app-new-product-panel>
+  </div>
 </div>

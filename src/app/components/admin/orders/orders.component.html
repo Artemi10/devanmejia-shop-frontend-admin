@@ -1,5 +1,11 @@
-<div class="orders">
-  <div class="orders__list"><app-order-list [orders]="orders" (selectOrderEvent)="selectOrderEventListener($event)"></app-order-list></div>
-  <div *ngIf="selectedOrder != null" class="orders__products"><app-order-products [selectedOrder]="selectedOrder"></app-order-products></div>
-  <div *ngIf="selectedOrder === null" class="orders__products_empty">Select order</div>
+<div class="orders row no-gutters" (window:resize)="onResize($event)">
+  <div class="orders__list col-xl-4 col-lg-5 col-md-5">
+    <app-order-panel-tittle [tittle]="'List of orders'" (clickButtonEvent)="clickOrdersListButtonEventListener()"></app-order-panel-tittle>
+    <app-order-list [ngClass]="{'orders__products_close' : !showOrdersListPanel}" [orders]="orders" (selectOrderEvent)="selectOrderEventListener($event)"></app-order-list>
+  </div>
+  <div *ngIf="selectedOrder != null" class="orders__products col-xl-8 col-lg-7 col-md-7">
+    <app-order-panel-tittle [tittle]="'List of products'" (clickButtonEvent)="clickOrderButtonEventListener()"></app-order-panel-tittle>
+    <app-order-products [ngClass]="{'orders__list_close' : !showOrderProductsPanel}" [selectedOrder]="selectedOrder"></app-order-products>
+  </div>
+  <div *ngIf="selectedOrder === null" class="orders__products_empty col-xl-8 col-lg-7 col-md-7">Select order</div>
 </div>

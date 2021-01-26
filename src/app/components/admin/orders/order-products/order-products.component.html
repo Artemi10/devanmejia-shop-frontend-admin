@@ -1,4 +1,3 @@
-<p class="order-products__tittle">List of products</p>
 <p class="order-products__order-id">Order ID:{{selectedOrder.id}}</p>
 <div class="col-sm-12" *ngFor="let cartProduct of cartProducts">
   <app-order-product [cartProduct]="cartProduct" [orderStatus]="selectedOrder.orderStatus"></app-order-product>

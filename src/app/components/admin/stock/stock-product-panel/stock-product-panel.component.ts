@@ -10,9 +10,14 @@ import {StockProduct} from '../../../../models/stock-product.model';
 export class StockProductPanelComponent implements OnChanges{
   public stockProducts: StockProduct[] = [];
   public errorMessage: string = '';
+  public isButtonShown: boolean;
+  public isTableShown: boolean;
   @Input() public updateProductsFlag: boolean;
 
-  constructor(private stockProductService: StockProductService) {}
+  constructor(private stockProductService: StockProductService) {
+    this.isButtonShown = window.innerWidth < 576;
+    this.isTableShown = !this.isButtonShown;
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.stockProductService.getStockProducts()
@@ -31,5 +36,9 @@ export class StockProductPanelComponent implements OnChanges{
       });
   }
 
+  public onResize(event: any){
+    this.isButtonShown = event.target.innerWidth < 576;
+    this.isTableShown = !this.isButtonShown;
+  }
 
 }

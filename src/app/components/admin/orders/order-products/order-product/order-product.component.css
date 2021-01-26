@@ -1,28 +1,26 @@
 .order-product{
   display: flex;
   flex-direction: row;
-}
-.order-product__image,
-.order-product__name,
-.order-product__amount{
-  width: 33%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 10px;
 }
 .order-product__image img{
   display: block;
-  width: 80%;
+  height: 120px;
   border-radius: 5px;
-  margin: 15px auto;
+  margin: 0 auto;
 }
 .order-product__amount__tittle,
 .order-product__name__tittle{
   text-align: center;
-  font-size: 30px;
-  margin: 15px auto;
+  font-size: 25px;
+  margin: 0 auto;
 }
 .order-product__amount__value,
 .order-product__name__value{
   text-align: center;
-  font-size: 25px;
-  margin: 0 auto 15px;
+  font-size: 20px;
+  margin: 0 auto;
 }
 

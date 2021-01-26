@@ -2,12 +2,12 @@ import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {StockProductService} from '../../../../services/stock-product/stock-product.service';
 
+
 @Component({
   selector: 'app-new-product-panel',
   templateUrl: './new-product-panel.component.html',
   styleUrls: ['./new-product-panel.component.css']
 })
-
 export class NewProductPanelComponent{
   public showCropper: boolean = false;
   public cropFile: string
@@ -59,7 +59,7 @@ export class NewProductPanelComponent{
     }
   }
   public cropFileEventListener(file){
-   this.croppedPicture = file;
+    this.croppedPicture = file;
   }
 
   public addProduct(): void{
@@ -80,6 +80,4 @@ export class NewProductPanelComponent{
     this.errorMessage = '';
     this.successMessage = '';
   }
-
-
 }

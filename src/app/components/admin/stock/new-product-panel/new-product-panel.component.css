@@ -1,13 +1,3 @@
-.product-panel{
-  margin: 0 auto;
-}
-.product-panel__tittle{
-  font-size: 35px;
-  color:  #939393;
-  text-align: center;
-  margin-top: 10px;
-  padding-bottom: 14px;
-}
 .product-panel__warning_request{
   margin-top: 10px;
   text-align: center;
@@ -89,6 +79,8 @@
 .product-panel__form__buttons_load input{
   display: none;
 }
+
+
 
 
 

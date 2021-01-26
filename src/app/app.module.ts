@@ -23,9 +23,12 @@ import { OrderListFilterComponent } from './components/admin/orders/order-list/o
 import { FilterTypeComponent } from './components/admin/orders/order-list/order-list-filter/filter-type/filter-type.component';
 import { StockComponent } from './components/admin/stock/stock.component';
 import { NewProductPanelComponent } from './components/admin/stock/new-product-panel/new-product-panel.component';
-import { CropperComponent } from './components/admin/stock/new-product-panel/cropper/cropper.component';
 import {AuthorizationGuard} from './guards/authorization/authorization.guard';
 import {RefreshTokenInterceptor} from './services/authentication/refresh-token.interceptor';
+import { PanelTittleComponent } from './components/admin/stock/panel-tittle/panel-tittle.component';
+import {CropperComponent} from './components/admin/stock/new-product-panel/cropper/cropper.component';
+import { OrderPanelTittleComponent } from './components/admin/orders/order-panel-tittle/order-panel-tittle.component';
+
 
 const appRoutes: Routes = [
   {path:'orders', component:OrdersComponent, canActivate:[AuthenticationGuard]},
@@ -51,7 +54,9 @@ const appRoutes: Routes = [
     FilterTypeComponent,
     StockComponent,
     NewProductPanelComponent,
-    CropperComponent
+    CropperComponent,
+    PanelTittleComponent,
+    OrderPanelTittleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,35 +1,33 @@
-<div class="product-panel">
-  <div class="product-panel__tittle">Add new product</div>
-  <p *ngIf="isPanelMessageShown()" class="product-panel__warning_request">{{errorMessage}}</p>
-  <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="product__form">
-    <div class="product-panel__form__input">
-      <div class="product-panel__form__input_warning" *ngIf="checkInput('productName')">Please, enter product name</div>
-      <input class="product-panel__form__input_product-name" [style.border-color]="checkInput('productName') ? '#c01934' : '#939393'" type="text" placeholder="Product name" formControlName="productName">
+<p *ngIf="isPanelMessageShown()" class="product-panel__warning_request">{{errorMessage}}</p>
+<form [formGroup]="productForm" (ngSubmit)="addProduct()" class="product__form">
+  <div class="product-panel__form__input">
+    <div class="product-panel__form__input_warning" *ngIf="checkInput('productName')">Please, enter product name</div>
+    <input class="product-panel__form__input_product-name" [style.border-color]="checkInput('productName') ? '#c01934' : '#939393'" type="text" placeholder="Product name" formControlName="productName">
+  </div>
+  <div class="product-panel__form__input">
+    <div class="product-panel__form__input_warning" *ngIf="checkInput('productPrice')">Please, enter price</div>
+    <input class="product-panel__form__input_price" [style.border-color]="checkInput('productPrice') ? '#c01934' : '#939393'" type="text" placeholder="Price" formControlName="productPrice">
+  </div>
+  <div class="product-panel__form__input">
+    <div class="product-panel__form__input_warning" *ngIf="checkInput('productDescription')">Please, enter description</div>
+    <input class="product-panel__form__input_description" [style.border-color]="checkInput('productDescription') ? '#c01934' : '#939393'" type="text" placeholder="Description" formControlName="productDescription">
+  </div>
+  <div class="product-panel__form__input">
+    <div class="product-panel__form__input_warning" *ngIf="checkInput('productType')">Please, enter product type</div>
+    <div class="product-panel__form__input_select">
+      <select class="product-panel__form__input_product-type" formControlName="productType">
+        <option *ngFor="let productType of productTypes" value="{{productType}}">{{productType}}</option>
+      </select>
     </div>
-    <div class="product-panel__form__input">
-      <div class="product-panel__form__input_warning" *ngIf="checkInput('productPrice')">Please, enter price</div>
-      <input class="product-panel__form__input_price" [style.border-color]="checkInput('productPrice') ? '#c01934' : '#939393'" type="text" placeholder="Price" formControlName="productPrice">
-    </div>
-    <div class="product-panel__form__input">
-      <div class="product-panel__form__input_warning" *ngIf="checkInput('productDescription')">Please, enter description</div>
-      <input class="product-panel__form__input_description" [style.border-color]="checkInput('productDescription') ? '#c01934' : '#939393'" type="text" placeholder="Description" formControlName="productDescription">
-    </div>
-    <div class="product-panel__form__input">
-      <div class="product-panel__form__input_warning" *ngIf="checkInput('productType')">Please, enter product type</div>
-      <div class="product-panel__form__input_select">
-        <select class="product-panel__form__input_product-type" formControlName="productType">
-          <option *ngFor="let productType of productTypes" value="{{productType}}">{{productType}}</option>
-        </select>
-      </div>
-    </div>
-    <app-cropper *ngIf="showCropper" [cropFile]="cropFile" (cropFileEvent)="cropFileEventListener($event)"></app-cropper>
-    <div class="product-panel__form__picture-warning" *ngIf="checkFileInput()">{{loadFileErrorMessage}}</div>
-    <div class="product-panel__form__buttons">
-      <label class="product-panel__form__buttons_load">
-        Load
-        <input [style.border-color]="checkFileInput() ? '#c01934' : '#939393'" type="file" formControlName="productImage" (change)="changeFileInputValueListener($event.target.files.item(0))" >
-      </label>
-      <button class="product-panel__form__buttons_submit" [disabled]="productForm.invalid">Add</button>
-    </div>
-  </form>
-</div>
+  </div>
+  <app-cropper *ngIf="showCropper" [cropFile]="cropFile" (cropFileEvent)="cropFileEventListener($event)"></app-cropper>
+  <div class="product-panel__form__picture-warning" *ngIf="checkFileInput()">{{loadFileErrorMessage}}</div>
+  <div class="product-panel__form__buttons">
+    <label class="product-panel__form__buttons_load">
+      Load
+      <input [style.border-color]="checkFileInput() ? '#c01934' : '#939393'" type="file" formControlName="productImage" (change)="changeFileInputValueListener($event.target.files.item(0))" >
+    </label>
+    <button class="product-panel__form__buttons_submit" [disabled]="productForm.invalid">Add</button>
+  </div>
+</form>
+
