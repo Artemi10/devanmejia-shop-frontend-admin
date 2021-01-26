@@ -17,7 +17,7 @@ export class AuthorizationService {
   }
 
   public sendRefreshTokensRequest(): Observable<Object>{
-    return this.http.post(environment.apiUrl + "/api/auth/refresh", this.authenticationService.getRefreshToken())
+    return this.http.post(environment.apiUrl + "/api/auth/refresh", this.authenticationService.getRefreshToken());
   }
 
 

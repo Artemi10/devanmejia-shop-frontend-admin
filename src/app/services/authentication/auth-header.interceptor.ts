@@ -1,4 +1,4 @@
- import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
+ import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from "rxjs";
  import {environment} from '../../../environments/environment';
 export const TOKEN_NAME: string = 'jwt_text';
